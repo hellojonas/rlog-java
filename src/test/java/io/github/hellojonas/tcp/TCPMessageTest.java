@@ -7,11 +7,11 @@ import static org.junit.jupiter.api.Assertions.assertTrue;
 import java.nio.charset.StandardCharsets;
 import java.util.Collections;
 
-import org.junit.jupiter.api.Disabled;
+import org.junit.jupiter.api.Test;
 
 public class TCPMessageTest {
 
-    @Disabled
+    @Test
     public void TestMarshalUnmarshal() {
         String expected = "A message to be sent! not in a bottle though áéíóú-àèìòù-âêô-ãõ-ç :)";
         expected = String.join("\n", Collections.nCopies(12, expected));
@@ -22,12 +22,12 @@ public class TCPMessageTest {
                 .data(expected.getBytes(StandardCharsets.UTF_8))
                 .build();
 
-        byte[] marshalled = TCPMessage.MarshalBinary(toSend);
+        byte[] marshalled = TCPMessage.marshalBinary(toSend);
 
         assertNotNull(marshalled);
         assertTrue(marshalled.length > 0);
 
-        TCPMessage msg = TCPMessage.UnmarshalBinary(marshalled);
+        TCPMessage msg = TCPMessage.unmarshalBinary(marshalled);
 
         assertEquals(msg.getVersion(), toSend.getVersion());
         assertEquals(msg.getFlags(), toSend.getFlags());
