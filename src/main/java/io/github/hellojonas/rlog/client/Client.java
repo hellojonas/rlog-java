@@ -106,7 +106,13 @@ public class Client {
 			throw new RuntimeException("auth message must be contained in a single message");
 		}
 
-		return new String(authRes.getData(), StandardCharsets.UTF_8).equals(AUTH_OK);
+		boolean isAuth = new String(authRes.getData(), StandardCharsets.UTF_8).equals(AUTH_OK);
+
+		if (!isAuth) {
+			close();
+		}
+
+		return isAuth;
 	}
 
 	public TCPConnection getConn() {
