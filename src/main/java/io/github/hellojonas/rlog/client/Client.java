@@ -1,18 +1,18 @@
-package io.github.hellojonas.client;
+package io.github.hellojonas.rlog.client;
 
 import java.io.IOException;
 import java.io.InputStream;
 import java.net.InetSocketAddress;
 import java.net.Socket;
 import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
 
 import com.google.gson.Gson;
 
-import io.github.hellojonas.tcp.TCPConnection;
-import io.github.hellojonas.tcp.TCPMessage;
+import io.github.hellojonas.rlog.tcp.TCPConnection;
+import io.github.hellojonas.rlog.tcp.TCPMessage;
+
 
 public class Client {
 	public final static String AUTH_OK = "AUTH_OK";

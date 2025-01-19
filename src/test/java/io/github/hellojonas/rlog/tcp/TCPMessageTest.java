@@ -1,4 +1,4 @@
-package io.github.hellojonas.tcp;
+package io.github.hellojonas.rlog.tcp;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
 import static org.junit.jupiter.api.Assertions.assertNotNull;

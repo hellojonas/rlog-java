@@ -1,4 +1,4 @@
-package io.github.hellojonas.tcp;
+package io.github.hellojonas.rlog.tcp;
 
 import java.io.IOException;
 import java.io.InputStream;

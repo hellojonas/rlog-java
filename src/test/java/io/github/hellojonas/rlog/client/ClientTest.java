@@ -1,4 +1,4 @@
-package io.github.hellojonas.client;
+package io.github.hellojonas.rlog.client;
 
 import java.io.IOException;
 import java.nio.charset.StandardCharsets;
